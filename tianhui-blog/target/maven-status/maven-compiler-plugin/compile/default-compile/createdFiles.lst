@@ -1,0 +1,10 @@
+com\tianhui\controller\UserController.class
+com\tianhui\controller\ArticleController.class
+com\tianhui\filter\JwtAuthenticationTokenFilter.class
+com\tianhui\TianHuiBlogApplication.class
+com\tianhui\controller\CommentController.class
+com\tianhui\controller\LinkController.class
+com\tianhui\config\SecurityConfig.class
+com\tianhui\controller\BlogLoginController.class
+com\tianhui\controller\UploadController.class
+com\tianhui\controller\CategoryController.class

@@ -2,6 +2,7 @@ package com.tianhui.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.tianhui.entity.File;
+import com.tianhui.entity.ResponseResult;
 
 /**
  * (File)表服务接口
@@ -11,5 +12,6 @@ import com.tianhui.entity.File;
  */
 public interface FileService extends IService<File> {
 
+    ResponseResult fileList();
 }
 
