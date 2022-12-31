@@ -15,5 +15,12 @@
       <jdbc-url>jdbc:mysql://localhost:3306/net_disk</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="net_disk@121.37.239.38" uuid="37521002-ed76-43a4-afb1-d99b577ee6c5">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://121.37.239.38:3306/net_disk</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

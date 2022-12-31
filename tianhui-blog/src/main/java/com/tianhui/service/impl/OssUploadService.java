@@ -32,23 +32,23 @@ public class OssUploadService implements UploadService {
         图片上传
      */
     @Override
-    public ResponseResult upload(MultipartFile img, Long currentId) {
+    public ResponseResult upload(MultipartFile file, Long parentId, String type) {
         //判断文件类型
         //获取原始文件名
-        String originalFilename = img.getOriginalFilename();
+        String originalFilename = file.getOriginalFilename();
         //对原始文件名进行判断
 //        if (!originalFilename.endsWith(".png")) {
 //            throw new SystemException(AppHttpCodeEnum.FILE_TYPE_ERROR);
 //        }
         //如果判断通过上传文件到OSS
         String filePath = PathUtils.generateFilePath(originalFilename);
-        String url = uploadOss(img, filePath);//  2099/2/3/wqeqeqe.png
+        String url = uploadOss(file, filePath);//  2099/2/3/wqeqeqe.png
 
-        fileService.save(new File(null, originalFilename, url, currentId));
+        fileService.save(new File(null, originalFilename, parentId, type, url, 0));
         return ResponseResult.okResult(url);
     }
 
-    private String uploadOss(MultipartFile imgFile, String filePath) {
+    private String uploadOss(MultipartFile file, String filePath) {
         //构造一个带指定 Region 对象的配置类
         Configuration cfg = new Configuration(Region.autoRegion());
         //...其他参数参考类注释
@@ -60,7 +60,7 @@ public class OssUploadService implements UploadService {
         String secretKey = "lBqqHpKEmUsVVuzcT5FFpKg-FqGtBa6iaFga4Ltj";
         String bucket = "pictures-files";
         try {
-            InputStream inputStream = imgFile.getInputStream();
+            InputStream inputStream = file.getInputStream();
             Auth auth = Auth.create(accessKey, secretKey);
             String upToken = auth.uploadToken(bucket);
             try {

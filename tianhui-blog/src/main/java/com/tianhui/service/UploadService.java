@@ -9,8 +9,8 @@ import org.springframework.web.multipart.MultipartFile;
 public interface UploadService {
 
     /*
-        图片上传
+        文件上传
      */
-    ResponseResult upload(MultipartFile img, Long currentId);
+    ResponseResult upload(MultipartFile file, Long parentId,String type);
 
 }

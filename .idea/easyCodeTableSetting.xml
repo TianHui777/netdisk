@@ -81,22 +81,29 @@
                   <ColumnInfoDTO>
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
-                    <option name="name" value="filePath" />
+                    <option name="name" value="parentId" />
+                    <option name="type" value="java.lang.Long" />
+                  </ColumnInfoDTO>
+                  <ColumnInfoDTO>
+                    <option name="comment" value="类型：file/folder" />
+                    <option name="custom" value="false" />
+                    <option name="ext" value="{}" />
+                    <option name="name" value="type" />
                     <option name="type" value="java.lang.String" />
                   </ColumnInfoDTO>
                   <ColumnInfoDTO>
                     <option name="custom" value="false" />
                     <option name="ext" value="{}" />
-                    <option name="name" value="parentId" />
-                    <option name="type" value="java.lang.Long" />
+                    <option name="name" value="fileUrl" />
+                    <option name="type" value="java.lang.String" />
                   </ColumnInfoDTO>
                 </list>
               </option>
               <option name="name" value="File" />
               <option name="preName" value="" />
-              <option name="saveModelName" value="tianhui-framework" />
+              <option name="saveModelName" value="tianhui-blog" />
               <option name="savePackageName" value="com.tianhui" />
-              <option name="savePath" value="./tianhui-framework/src/main/java/com/tianhui" />
+              <option name="savePath" value="./tianhui-blog/src/main/java/com/tianhui" />
               <option name="templateGroupName" value="MybatisPlus" />
             </TableInfoDTO>
           </value>

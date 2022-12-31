@@ -8,10 +8,13 @@ import com.tianhui.entity.ResponseResult;
  * (File)表服务接口
  *
  * @author makejava
- * @since 2022-12-24 11:37:08
+ * @since 2022-12-31 10:57:40
  */
 public interface FileService extends IService<File> {
 
-    ResponseResult fileList();
+    /*
+        根据当前目录Id获取所有文件
+     */
+    ResponseResult fileList(Long fileId);
 }
 
