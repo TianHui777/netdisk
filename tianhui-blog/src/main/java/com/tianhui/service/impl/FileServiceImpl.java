@@ -6,6 +6,8 @@ import com.tianhui.dao.FileDao;
 import com.tianhui.entity.File;
 import com.tianhui.entity.ResponseResult;
 import com.tianhui.service.FileService;
+import com.tianhui.utils.BeanCopyUtils;
+import com.tianhui.vo.FileVo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -36,8 +38,10 @@ public class FileServiceImpl extends ServiceImpl<FileDao, File> implements FileS
 
         LambdaQueryWrapper<File> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(File::getParentId, fileId);
-        List<File> rootFiles = list(queryWrapper);
-        return ResponseResult.okResult(rootFiles);
+        List<File> files = list(queryWrapper);
+        List<FileVo> fileVos = BeanCopyUtils.copyBeanList(files, FileVo.class);
+
+        return ResponseResult.okResult(fileVos);
 
 
     }
